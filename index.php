@@ -5,6 +5,7 @@ define("ROOT", __DIR__);
 
 $uri_list = require_once('uri.php');
 $request = trim($_SERVER['REQUEST_URI'], ' /');
+$alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 foreach( $uri_list as $key => $value )
 {
@@ -22,7 +23,6 @@ foreach( $uri_list as $key => $value )
 					$param = $request[1];
 					if(strlen($request[2]) === 1)
 					{
-						$alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 						foreach($alphabet as $value)
 						{
 							if($request[2] === $value)
@@ -35,7 +35,6 @@ foreach( $uri_list as $key => $value )
 				}
 				elseif(strlen($request[1]) === 1)
 				{
-					$alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 					foreach($alphabet as $value)
 					{
 						if($request[1] === $value)
@@ -58,7 +57,6 @@ foreach( $uri_list as $key => $value )
 							}
 							elseif(strlen($request[2]) === 1)
 							{
-								$alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 								foreach($alphabet as $value)
 								{
 									if($request[2] === $value)
