@@ -11,7 +11,7 @@ class Verb
 
 	public function index()
 	{
-		if($_SERVER[REQUEST_METHOD] == POST)
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['new-verb-name']) and !empty($_POST['new-verb-name']))
 			{
@@ -32,7 +32,7 @@ class Verb
 		{
 		$verb = $this->sql->getVerb($id);
 		}
-		elseif($_SERVER[REQUEST_METHOD] == POST)
+		elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['verb-name']) and !empty($_POST['verb-name']))
 			{

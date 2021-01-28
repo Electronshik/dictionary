@@ -2,8 +2,8 @@
 class DictModel extends mysqli
 {
 	const HOST = 'localhost';
-	const USER = 'root';
-	const PASSWORD = '';
+	const USER = 'mysql';
+	const PASSWORD = 'mysql';
 	const DATABASE = 'english';
 
 	public function __construct()
@@ -97,9 +97,9 @@ class DictModel extends mysqli
 
 	public function addWord($name, $translate, $dict)
 	{
-		$name = strtolower($this->real_escape_string(trim($name)));
-		$translate = strtolower($this->real_escape_string(trim($translate)));
-		$this->query("INSERT INTO words VALUES ('', '$name', '$translate', '$dict', '')");
+		//$name = strtolower($this->real_escape_string(trim($name)));
+		//$translate = strtolower($this->real_escape_string(trim($translate)));
+		$this->query("INSERT INTO words VALUES (NULL, '$name', '$translate', '$dict', '')");
 		$this->syncNum();
 	}
 

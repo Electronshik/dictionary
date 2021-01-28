@@ -51,7 +51,7 @@ class Dict
 
 	public function add()
 	{
-		if ($_SERVER['REQUEST_METHOD'] == POST)
+		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['new-dict-name']))
 			{
@@ -67,7 +67,7 @@ class Dict
 
 	public function editdict($dict_id)
 	{
-		if ($_SERVER['REQUEST_METHOD'] == POST)
+		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['edit-dict-name']))
 			{
@@ -88,11 +88,11 @@ class Dict
 
 	public function addword()
 	{
-		if ($_SERVER['REQUEST_METHOD'] == POST)
+		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['new-word-name']))
 			{
-			$this->dict->addWord($_POST['new-word-name'], $_POST['new-word-translate'], $_POST['new-word-dict']);
+				$this->dict->addWord($_POST['new-word-name'], $_POST['new-word-translate'], $_POST['new-word-dict']);
 			}
 		}
 		$marked = count($this->dict->getMarkedWords());
@@ -104,7 +104,7 @@ class Dict
 
 	public function editword($id)
 	{
-		if ($_SERVER['REQUEST_METHOD'] == POST)
+		if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			if(isset($_POST['edit-word-id']))
 			{
@@ -143,7 +143,7 @@ class Dict
 					$words[$key]['word'] = str_ireplace($search, '<u>'.$search.'</u>', $words[$key]['word']);
 					if(substr($words[$key]['word'], 0, 3) == '<u>')
 					{
-						$words[$key]['word']{3} = strtoupper($words[$key]['word']{3});
+						$words[$key]['word'][3] = strtoupper($words[$key]['word'][3]);
 					}
 				}
 					$mark = ($words[$key]['mark'] == 'on')?'<input type="button" value="Unmark" onclick="Unmark('.$words[$key]['id'].');">':'<input type="button" value="Mark" onclick="Mark('.$words[$key]['id'].');">';

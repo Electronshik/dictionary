@@ -1,7 +1,7 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 
-define(ROOT, __DIR__);
+define("ROOT", __DIR__);
 
 $uri_list = require_once('uri.php');
 $request = trim($_SERVER['REQUEST_URI'], ' /');

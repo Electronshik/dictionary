@@ -109,8 +109,12 @@ class RandView
 			//preg_match('~listen to British English pronunciation" data-src-mp3=\"([^"]+)~', $x, $preg);
 			//preg_match('~<span class="ipa">(.+?)</span>~', $x, $trans);
 			//$x = substr($x, strpos($x, $trans[1]));
-			$file = $page->find('span.pron-info[pron-region="US"]:eq(0)>span.us>span:eq(1)')->attr('data-src-mp3');
-			$trans = $page->find('span.pron-info[pron-region="US"]:eq(0)>span.uk>span.pron>span.ipa')->text();
+			//$file = $page->find('span.pron-info[pron-region="US"]:eq(0)>span.us>span:eq(1)')->attr('data-src-mp3');
+			//$trans = $page->find('span.pron-info[pron-region="US"]:eq(0)>span.uk>span.pron>span.ipa')->text();
+			$file = $page->find('span.us>span.daud>amp-audio>source')->attr('src');
+			$file = "https://dictionary.cambridge.org".$file;
+			//echo $file;
+			$trans = $page->find('span.us>span.pron:eq(0)>span.ipa')->text();
 			echo '<p*                                               *p>';
 			echo '<audio controls>';
 				echo '<source src="'.$file.'" type="audio/mpeg">';
@@ -120,8 +124,10 @@ class RandView
 			echo '<p>***********************************************</p>';
 			//preg_match('~listen to American pronunciation" data-src-mp3=\"([^"]+)~', $x, $preg);
 			//preg_match('~<span class="ipa">(.+?)</span>~', $x, $trans);
-			$file = $page->find('span.pron-info[pron-region="UK"]:eq(0):eq(0)>span.uk:eq(0)>span:eq(1)')->attr('data-src-mp3');
-			$trans = $page->find('span.pron-info[pron-region="UK"]:eq(0)>span.uk:eq(1)>span.pron>span.ipa')->text();
+			$file = $page->find('span.uk>span.daud>amp-audio>source')->attr('src');
+			$file = "https://dictionary.cambridge.org".$file;
+			//$trans = $page->find('span.pron-info[pron-region="UK"]:eq(0)>span.uk:eq(1)>span.pron>span.ipa')->text();
+			$trans = $page->find('span.uk>span.pron:eq(0)>span.ipa')->text();
 			echo '<audio controls>';
 				echo '<source src="'.$file.'" type="audio/mpeg">';
 				echo 'Your browser does not support the audio element.data-src-mp3';

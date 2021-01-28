@@ -10,7 +10,7 @@ class Analys
 
 	public function index()
 	{
-		if($_SERVER[REQUEST_METHOD] == POST)
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			$former_text = $_POST['text'];
 			if(isset($_POST['word']) and !empty($_POST['word']))
@@ -80,7 +80,7 @@ class Analys
 
 	public function dict()
 	{
-		if($_SERVER[REQUEST_METHOD] == POST)
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			$this->sql->addWord($_POST['word']);
 		}
@@ -92,11 +92,11 @@ class Analys
 
 	public function temp()
 	{
-		if(($_SERVER[REQUEST_METHOD] == POST) and (!empty($_POST['word'])))
+		if(($_SERVER['REQUEST_METHOD'] == 'POST') and (!empty($_POST['word'])))
 		{
 			$this->sql->addTempWord($_POST['word']);
 		}
-		if(($_SERVER[REQUEST_METHOD] == POST) and (!empty($_POST['clear'])))
+		if(($_SERVER['REQUEST_METHOD'] == 'POST') and (!empty($_POST['clear'])))
 		{
 			$this->sql->clearTemp();
 		}

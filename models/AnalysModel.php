@@ -2,8 +2,8 @@
 class AnalysModel extends mysqli
 {
 	const HOST = 'localhost';
-	const USER = 'root';
-	const PASSWORD = '';
+	const USER = 'mysql';
+	const PASSWORD = 'mysql';
 	const DATABASE = 'english';
 
 	public function __construct()

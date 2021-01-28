@@ -143,13 +143,13 @@ class DictView
 
 		function PlayUS(word)
 		{
-			audio.setAttribute('src', 'http://wooordhunt.ru//data/sound/word/us/mp3/'+word+'.mp3');
+			audio.setAttribute('src', 'http://wooordhunt.ru//data/sound/sow/us/'+word+'.mp3');
 			audio.play();
 		}
 
 		function PlayUK(word)
 		{
-			audio.setAttribute('src', 'http://wooordhunt.ru//data/sound/word/uk/mp3/'+word+'.mp3');
+			audio.setAttribute('src', 'http://wooordhunt.ru//data/sound/sow/uk/'+word+'.mp3');
 			audio.play();
 		}
 
